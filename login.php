@@ -5,16 +5,17 @@ include_once 'face.php';
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Celke - Login</title>
-		
-		<script src="https://apis.google.com/js/platform.js" async defer></script>
-		<meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
-		
-		<link href="css/bootstrap.css" rel="stylesheet">
-		<link href="css/signin.css" rel="stylesheet">
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>Api - Login</title>
+
+            <script src="https://apis.google.com/js/platform.js" async defer></script>
+            <!-- <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com"> -->
+            <meta name="google-signin-client_id" content="434380657560-1aubjsedos72o7r279mjjuhaavhp57b9.apps.googleusercontent.com"> 
+
+            <link href="css/bootstrap.css" rel="stylesheet">
+            <link href="css/signin.css" rel="stylesheet">
 	</head>
 	<body>
 		<div class="container">
@@ -79,15 +80,16 @@ include_once 'face.php';
 					userPicture:userPicture,
 					userEmail:userEmail
 				};
-				$.post('valida_google.php', dados, function(retorna){
-					if(retorna === '"erro"'){
-						var msg = "<div class='alert alert-danger'>Usuário não encontrado com esse e-mail!</div>";
-						document.getElementById('msg').innerHTML = msg;
-					}else{
-						window.location.href = retorna;
-					}
-					
-				});
+                                console.log(dados);
+//				$.post('valida_google.php', dados, function(retorna){
+//					if(retorna === '"erro"'){
+//						var msg = "<div class='alert alert-danger'>Usuário não encontrado com esse e-mail!</div>";
+//						document.getElementById('msg').innerHTML = msg;
+//					}else{
+//						window.location.href = retorna;
+//					}
+//					
+//				});
 			}else{
 				var msg = "Usuário não encontrado!";
 				document.getElementById('msg').innerHTML = msg;
