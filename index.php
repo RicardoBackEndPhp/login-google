@@ -33,6 +33,17 @@ and open the template in the editor.
                 var userEmail   = profile.getEmail(); 			 
                 var userToken   = googleUser.getAuthResponse().id_token; 
 
+
+                
+            
+                  //como já peguei os dados que preciso e os valores 
+                 //estão armazenados em minhas variáveis
+                //me desconecto da api
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.disconnect(); //desconectando da api
+
+
+
                 //document.getElementById('msg').innerHTML = userEmail;
                 if(userEmail !== ''){
                         var dados = {
